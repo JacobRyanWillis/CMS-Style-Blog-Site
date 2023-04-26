@@ -29,7 +29,7 @@ Post.init(
     },
     created_at: {
       type: DataTypes.DATE,
-      allwoNull: false,
+      allowNull: false,
       defaultValue: DataTypes.NOW,
     },
   },

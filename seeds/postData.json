@@ -1,0 +1,17 @@
+[
+  {
+    "title": "First Post",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "user_id": 1
+  },
+  {
+    "title": "Second Post",
+    "content": "Pellentesque vel augue in quam tristique bibendum.",
+    "user_id": 1
+  },
+  {
+    "title": "Third Post",
+    "content": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+    "user_id": 2
+  }
+]
