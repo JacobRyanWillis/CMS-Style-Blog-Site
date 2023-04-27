@@ -1,5 +1,8 @@
 {{#each posts}}
-  <h2>{{post.title}}</h2>
-  <p>Created by {{User.username}} on {{post.created_at}}</p>
-  <p>{{post.content}}</p>
+  <h2>{{title}}</h2>
+  <p>{{content}}</p>
+  <p>Created by {{user.username}} on {{created_at}}</p>
 {{/each}}
+
+
+{{!-- everyones posts (the landing page) --}}
