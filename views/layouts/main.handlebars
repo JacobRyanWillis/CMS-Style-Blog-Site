@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog-Site</title>
-</head>
-<body>
+  </head>
+  <body>
     <nav>
-  <ul>
-    <li><a href="/">Home</a></li>
-    {{#if loggedIn}}
-      <li><a href="/dashboard">Dashboard</a></li>
-      <li><a href="/logout">Logout</a></li>
-    {{else}}
-      <li><a href="/login">Login</a></li>
-      <li><a href="/signup">Sign up</a></li>
-    {{/if}}
-  </ul>
-</nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        {{#if logged_in}}
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a id="logout" href="#">Logout</a></li>
+        {{else}}
+        <li><a href="/login-signup">Login/Sign up</a></li>
+        {{/if}}
+      </ul>
+    </nav>
     {{{ body }}}
-</body>
+  <script src="./js/logout.js"></script>
+  </body>
 </html>
 
 
-
+{{!-- check to see why logged_in is not true. --}}
 {{!-- landing page should be posts of users but you have to login to create your own post. Dashboard page I will be able to add/edit/delete after loggedin.--}}

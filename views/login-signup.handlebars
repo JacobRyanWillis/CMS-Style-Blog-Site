@@ -1,0 +1,39 @@
+<h1>Login / Sign Up</h1>
+<div class="login-signup-container">
+  <div class="tab">
+    <button class="tablinks active" onclick="openForm(event, 'login')">Login</button>
+    <button class="tablinks" onclick="openForm(event, 'signup')">Sign Up</button>
+  </div>
+  <div id="login" class="tabcontent active">
+    <form id="login-form">
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email-login" required>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password-login" required>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+  <div id="signup" class="tabcontent">
+    <form id="signup-form">
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required>
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+      </div>
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+</div>
+
+<script src="/js/login.js"></script>
