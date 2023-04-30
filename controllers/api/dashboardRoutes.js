@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
 });
 
 // Get the form to create a new post
-router.get('/new', (req, res) => {
+router.get('/new-post', (req, res) => {
   res.render('new-post', { logged_in: req.session.logged_in });
 });
 

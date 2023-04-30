@@ -32,10 +32,6 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
-// Display the form for creating a new post
-router.get('/new-post', withAuth, (req, res) => {
-  res.render('new-post');
-});
 
 // Display the form for editing an existing post
 router.get('/edit-post/:id', withAuth, async (req, res) => {

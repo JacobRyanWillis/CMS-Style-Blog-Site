@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const withAuth = require('../../utils/auth.js');
 const { Post } = require('../../models');
 
 router.post('/', withAuth, async (req, res) => {
@@ -8,12 +9,14 @@ router.post('/', withAuth, async (req, res) => {
       content: req.body.content,
       user_id: req.session.user_id,
     });
+    console.log(newPost);
 
     res.redirect('/dashboard');
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
 
 // Get a single post by id
 router.get('/:id', async (req, res) => {
