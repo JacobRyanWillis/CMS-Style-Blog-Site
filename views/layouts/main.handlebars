@@ -14,15 +14,13 @@
         <li><a href="/dashboard">Dashboard</a></li>
         <li><a id="logout" href="#">Logout</a></li>
         {{else}}
-        <li><a href="/login-signup">Login/Sign up</a></li>
+        <li><a href="/login">Login</a></li>
         {{/if}}
       </ul>
     </nav>
     {{{ body }}}
-  <script src="./js/logout.js"></script>
+  <script src="/js/logout.js"></script>
   </body>
 </html>
 
 
-{{!-- check to see why logged_in is not true. --}}
-{{!-- landing page should be posts of users but you have to login to create your own post. Dashboard page I will be able to add/edit/delete after loggedin.--}}

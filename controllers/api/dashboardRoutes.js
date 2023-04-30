@@ -9,8 +9,13 @@ router.get('/', async (req, res) => {
     });
 
     const posts = postData.map((post) => post.get({ plain: true }));
-
-    res.render('dashboard', { posts, logged_in: req.session.logged_in });
+    
+    res.render('dashboard', { 
+      posts, 
+      logged_in: req.session.logged_in,
+      on_dashboard: true,
+      user: req.session.user,
+    });
   } catch (err) {
     res.status(500).json(err);
   }

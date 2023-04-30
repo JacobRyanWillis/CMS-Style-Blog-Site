@@ -8,7 +8,10 @@ router.get("/", async (req, res) => {
       include: [{ model: Comment, include: [User] }, User],
     });
     const posts = postData.map((post) => post.get({ plain: true }));
-    res.render("homepage", { posts });
+    res.render("homepage", { 
+      posts,
+      logged_in: req.session.logged_in
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -60,8 +63,10 @@ router.get('/dashboard', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-
-    res.render('dashboard', { user });
+    res.render('dashboard', { 
+      user, 
+      logged_in: req.session.logged_in 
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -73,13 +78,13 @@ router.get('/homepage', (req,res) => {
   res.render('homepage');
 });
 
-router.get("/login-signup", (req, res) => {
+router.get("/login", (req, res) => {
     // If the user is already logged in, redirect the request to another route
     if (req.session.logged_in) {
       res.redirect("/dashboard");
       return;
     }
-    res.render("login-signup");
+    res.render("login");
   });
 
 
