@@ -25,7 +25,10 @@ router.get('/post/:id', async (req, res) => {
       include: [{ model: Comment, include: [User] }, User],
     });
     const post = postData.get({ plain: true });
-    res.render('single-post', { post });
+    res.render('single-post', { 
+      post,
+      logged_in: req.session.logged_in
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -44,7 +47,10 @@ router.get('/edit-post/:id', withAuth, async (req, res) => {
     if (post.user_id !== req.session.user_id) {
       res.status(403).json('You are not authorized to edit this post');
     } else {
-      res.render('edit-post', { post });
+      res.render('edit-post', { 
+        post,
+        logged_in: req.session.logged_in 
+      });
     }
   } catch (err) {
     console.log(err);
@@ -69,9 +75,12 @@ router.get('/dashboard', withAuth, async (req, res) => {
   }
 });
 
-
 router.get('/homepage', (req,res) => {
   res.render('homepage');
+});
+
+router.get('/new-post', (req, res) => {
+  res.render('new-post', { logged_in: req.session.logged_in });
 });
 
 router.get("/login", (req, res) => {
@@ -86,4 +95,3 @@ router.get("/login", (req, res) => {
 
 module.exports = router;
 
-//  combine signup/login handlebars and edit/new-post handlebars.

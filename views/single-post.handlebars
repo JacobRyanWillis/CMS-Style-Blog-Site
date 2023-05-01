@@ -1,1 +1,17 @@
+  <h1>{{post.title}}</h1>
+  <p>{{post.content}}</p>
+  <p>Created by {{post.user.username}} on {{format_date post.created_at}}</p>
+  <h2>Comments</h2>
+  {{#each post.comments}}
+    <div>
+      <p>{{comment_text}}</p>
+      <p>Comment by {{user.username}} on {{format_date created_at}}</p>
+    </div>
+  {{/each}}
+  <form id="add-comment-form" data-post_id="{{post.id}}">
+    <label for="content">Comment:</label>
+    <textarea name="content" id="comment-content"></textarea>
+    <button type="submit">Add Comment</button>
+  </form>
+  <script src="/js/single-post.js"></script>
 

@@ -14,13 +14,12 @@
   {{#if user.comments.length}}
     <ul>
       {{#each user.comments}}
-        <li><a href="/post/{{Post.id}}">{{Post.title}}</a>: {{content}}</li>
+        <li><a href="/post/{{Post.id}}">{{Post.title}}</a>{{comment_text}}</li>
       {{/each}}
     </ul>
   {{else}}
     <p>You haven't made any comments yet.</p>
   {{/if}}
-  <button id="new-post-button">Add New Post</button>
-  <script src="/js/newPost.js"></script>
+  <button id="new-post-button"><a href="/new-post">Add New Post</a></button>
 </body>
 
