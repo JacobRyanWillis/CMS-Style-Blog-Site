@@ -3,6 +3,7 @@ const withAuth = require('../../utils/auth.js');
 const { Post } = require('../../models');
 
 router.post('/', withAuth, async (req, res) => {
+  console.log('post route triggered');
   try {
     const newPost = await Post.create({
       title: req.body.title,
