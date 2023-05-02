@@ -25,6 +25,12 @@ router.get('/post/:id', async (req, res) => {
       include: [{ model: Comment, include: [User] }, User],
     });
     const post = postData.get({ plain: true });
+
+    // Add is_author property to each comment object
+    post.comments.forEach(comment => {
+      comment.is_author = req.session.user_id === comment.user_id;
+    });
+
     res.render('single-post', { 
       post,
       logged_in: req.session.logged_in
@@ -34,6 +40,7 @@ router.get('/post/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 
 // Display the form for editing an existing post
