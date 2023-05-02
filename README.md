@@ -22,7 +22,8 @@ Once cloned NPM i
 
 ## Usage
 
-No instructions needed checkout my page on heroku.
+No instructions needed checkout my page on heroku: <br>
+https://techblogsite.herokuapp.com/
 
 ## Credits
 
