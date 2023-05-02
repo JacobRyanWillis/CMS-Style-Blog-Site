@@ -1,4 +1,4 @@
-  <h1>{{post.title}}</h1>
+<h1>{{post.title}}</h1>
 <p>{{post.content}}</p>
 <p>Created by {{post.user.username}} on {{format_date post.created_at}}</p>
 <h2>Comments</h2>
@@ -8,7 +8,10 @@
     <p>Comment by {{user.username}} on {{format_date created_at}}</p>
     {{#if is_author}}
       <button class="edit-comment-btn" data-comment_id="{{id}}">Edit</button>
-      <button class="delete-comment-btn" data-comment_id="{{id}}">Delete</button>
+      <button
+        class="delete-comment-btn"
+        data-comment_id="{{id}}"
+      >Delete</button>
     {{/if}}
   </div>
 {{/each}}
@@ -22,5 +25,3 @@
 <script src="/js/single-post.js"></script>
 <script src="/js/edit-comment.js"></script>
 <script src="/js/delete-comment.js"></script>
-
-
