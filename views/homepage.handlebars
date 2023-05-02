@@ -1,11 +1,14 @@
 {{#each posts}}
-  <div>
-    <h2><a href="/post/{{id}}">{{title}}</a></h2>
-    <p>{{content}}</p>
-    <p>Created by {{user.username}} on {{format_date created_at}}</p>
+  <div class="container">
+    <a href="/post/{{id}}" class="remove-blue">
+      <div class="post justify-content-center">
+        <h2>{{title}}</h2>
+        <p>{{content}}</p>
+        <p>Created by {{user.username}} on {{format_date created_at}}</p>
+      </div>
+    </a>
   </div>
 {{/each}}
 
 
-
-{{!-- everyones posts (the landing page) --}}
+{{! everyones posts (the landing page) }}
