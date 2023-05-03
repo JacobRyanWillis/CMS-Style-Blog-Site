@@ -1,27 +1,32 @@
-<h1>{{post.title}}</h1>
-<p>{{post.content}}</p>
-<p>Created by {{post.user.username}} on {{format_date post.created_at}}</p>
-<h2>Comments</h2>
-{{#each post.comments}}
-  <div>
-    <p>{{comment_text}}</p>
-    <p>Comment by {{user.username}} on {{format_date created_at}}</p>
-    {{#if is_author}}
-      <button class="edit-comment-btn" data-comment_id="{{id}}">Edit</button>
-      <button
-        class="delete-comment-btn"
-        data-comment_id="{{id}}"
-      >Delete</button>
-    {{/if}}
+<div class="container">
+  <div class="post">
+    <h1>{{post.title}}</h1>
+    <p>{{post.content}}</p>
+    <p>Created by {{post.user.username}} on {{format_date post.created_at}}</p>
   </div>
-{{/each}}
-{{#if logged_in}}
-  <form id="add-comment-form" data-post_id="{{post.id}}">
-    <label for="content">Comment:</label>
-    <textarea name="content" id="comment-content"></textarea>
-    <button type="submit">Add Comment</button>
-  </form>
-{{/if}}
+  <h2>Comments</h2>
+    {{#each post.comments}}
+      <div>
+        <p>{{comment_text}}</p>
+        <p>Comment by {{user.username}} on {{format_date created_at}}</p>
+        {{#if is_author}}
+          <button class="edit-comment-btn" data-comment_id="{{id}}">Edit</button>
+          <button
+            class="delete-comment-btn"
+            data-comment_id="{{id}}"
+          >Delete</button>
+        {{/if}}
+      </div>
+    {{/each}}
+    {{#if logged_in}}
+      <form id="add-comment-form" data-post_id="{{post.id}}">
+        <label for="content">Comment:</label>
+        <textarea name="content" id="comment-content"></textarea>
+        <button type="submit">Add Comment</button>
+      </form>
+    {{/if}}
+</div>
+
 <script src="/js/single-post.js"></script>
 <script src="/js/edit-comment.js"></script>
 <script src="/js/delete-comment.js"></script>

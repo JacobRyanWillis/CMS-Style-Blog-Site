@@ -1,10 +1,22 @@
-<h1>Edit Post</h1>
-<form id="edit-post-form" data-postId="{{post.id}}">
-  <label for="title">Title:</label>
-  <input type="text" name="title" id="edit-post-title" value="{{post.title}}" />
-  <label for="content">Content:</label>
-  <textarea name="content" id="edit-post-content">{{post.content}}</textarea>
-  <button type="submit">Update Post</button>
-</form>
-<button id="delete-post-button">Delete Post</button>
-<script src="/js/edit-post.js"></script>
+<div class="container">
+  <div class="col m-2 p-2">
+    <h1>Edit Post</h1>
+    <form id="edit-post-form" data-postId="{{post.id}}">
+      <label for="title">Title:</label>
+      <input
+        type="text"
+        name="title"
+        id="edit-post-title"
+        value="{{post.title}}"
+      />
+      <label for="content">Content:</label>
+      <textarea
+        name="content"
+        id="edit-post-content"
+      >{{post.content}}</textarea>
+      <button type="submit">Update Post</button>
+    </form>
+    <button id="delete-post-button">Delete Post</button>
+    <script src="/js/edit-post.js"></script>
+  </div>
+</div>
